@@ -1,0 +1,25 @@
+{% extends 'profiles/base.html' %}
+{% load widget_tweaks %}
+{% block content %}
+<div class="container">
+    <div class="row" class="justfy-content-center">
+        <div class="col-md-10 col-sm-12 col-lg-8">
+            <h2 class="char-title">Login</h2>
+            <div class="char-body">
+                <form action="" method="POST" attribute="novalidate">
+                    {% csrf_token %}
+                    {% include 'accounts/form.html' %}
+                    <button type="submit" class="btn-primary"> Login </button>
+                </form>
+            </div>
+            <div class="char-footer" class="text-muted " class="text-center">
+                Don't have an account? <a href="{% url 'signup' %}">Create Account</a> 
+            </div>
+            <div class="char-footer">
+                <small> Forgot password <a href="{% url 'password_reset' %}">Reset</a></small>
+            </div>
+        </div>
+    </div>
+</div>
+    
+{% endblock %}
